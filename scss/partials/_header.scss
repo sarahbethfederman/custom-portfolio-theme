@@ -1,0 +1,90 @@
+$navHeight: rem(70);
+
+.header-wrap {
+  width: 100%;
+  position: fixed;
+  height: rem(70);
+  top: 0;
+  left: 0;
+  z-index: 50;
+  @include media($desktop) {
+    height: rem(100);
+  }
+}
+
+.header-bar {
+  width: 100%;
+  background-color: rgba($black, .7);
+  z-index: 50;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: $navHeight;
+  padding-top: rem(28);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  transition: all .2s ease-out;
+  transform: translateY(0);
+  backface-visibility: hidden;
+  a {
+    transition: opacity .2s linear;
+    &:hover {
+      opacity: .8;
+    }
+    @include media($desktop) {
+      font-size: rem(24);
+    }
+  }
+  &.open {
+    background-color: rgba($black, .85);
+    .main-title a {
+      font-size: rem(24);
+      position: relative;
+      top: rem(-5);
+    }
+    .nav-trigger img {
+      position: relative;
+      top: rem(-5);
+      width: rem(25);
+      height: rem(25);
+    }
+  }
+  @include media($desktop) {
+    padding-left: 0;
+    padding-right: 0;
+    height: rem(100);
+    padding-top: rem(31);
+    background-color: rgba($black, .5);
+    .container {
+      max-width: rem(1200) !important;
+      overflow: hidden;
+      height: 100%;
+    }
+  }
+}
+
+.main-title {
+  font-family: $base-font-family;
+  text-transform: uppercase;
+  a {
+    float: left;
+    color: $white;
+    font-size: rem(12);
+    font-weight: 300;
+    margin: 0;
+    @include media($desktop) {
+      font-size: rem(24);
+    }
+  }
+}
+
+.nav-trigger {      // hamburger menu
+  img {
+    float: right;
+    width: rem(21);
+    height: rem(13);
+  }
+  @include media($desktop) {
+    display: none;
+  }
+}

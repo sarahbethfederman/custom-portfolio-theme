@@ -1,0 +1,72 @@
+.video-holder {
+  width: 100%;
+  position: relative;
+  margin-top: rem(60);
+  text-align: center;
+  .wp-video, img:not(.device) {  // position gifs and videos
+    position: absolute;
+    z-index: 10;
+  }
+  .device {
+    position: relative;
+    width: auto;
+    height: auto;
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+  }
+  &.phone {
+    width: 800px;
+    height: 1530px;
+    &.landscape {
+      
+    }
+    .wp-video, img:not(.device) {
+      width: 750px;
+      height: 1334px;
+      top: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  &.tablet {
+    .device {
+      width: rem(1337 / 2);
+    }
+    .wp-video, img:not(.device) {
+      width: 375px;
+      top: 130px;
+      left: 0;
+    }
+    &.landscape {
+
+    }
+  }
+  &.laptop {
+    .device {
+      width: rem(1337 / 2);
+    }
+    .wp-video, img:not(.device) {
+      width: 1440px;
+      top: 130px;
+      left: 0;
+    }
+  }
+  &.desktop {
+    .device {
+      width: rem(1337 / 2);
+    }
+    .wp-video, img:not(.device) {
+      width: 375px;
+      top: 130px;
+      left: 0;
+    }
+  }
+}
+
+// center [video] shortcode
+.wp-video {
+  margin-left: auto;
+  margin-right: auto;
+}

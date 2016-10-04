@@ -1,0 +1,172 @@
+// single post (includes portfolio)
+.single {
+  .page-title {
+    padding-bottom: rem(15);
+  }
+  .page-thumbnail {
+    margin-bottom: rem(60);
+    margin-top: rem(40);
+  }
+  .page-description {
+    margin-bottom: rem(15);
+  }
+  .hero {
+    .container {
+      max-width: 80%;
+    }
+  }
+  .avatar {
+    width: rem(100);
+    height: rem(100);
+    @include media($desktop) {
+      width: rem(250);
+      height: rem(250);
+    }
+  }
+}
+
+// blog posts
+.single-post {
+  .slide {
+    a {
+      text-decoration: underline;
+    }
+    &:last-of-type {
+      padding-bottom: 0; // makes footer info flush
+    }
+  }
+}
+
+.post-footer {
+  text-align: center;
+  hr {
+    margin: rem(40) 0;
+  }
+  .container {
+    width: 80%;
+  }
+  h4 {
+    color: #545454;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-family: $sans-serif;
+    font-size: rem(15);
+    margin-bottom: rem(5);
+    @include media($desktop) {
+      font-size: rem(30);
+    }
+  }
+
+  .next-article__header {
+    margin-bottom: rem(30);
+  }
+}
+
+.author {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #545454;
+  font-size: rem(15);
+  letter-spacing: 1px;
+  @include media($desktop) {
+    font-size: rem(30);
+  }
+}
+
+.date {
+  font-size: rem(12);
+  color: #545454;
+  text-transform: uppercase;
+  @include media($desktop) {
+    font-size: rem(20);
+  }
+}
+
+.avatar {
+  border-radius: 50%;
+  margin-bottom: rem(20);
+  @include media($desktop) {
+    width: rem(250);
+    height: rem(250);
+  }
+}
+
+.post-tags {
+  margin-bottom: rem(40);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: rem(300);
+  @include media($desktop) {
+    max-width: rem(500);
+  }
+  a {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #545454;
+    font-size: rem(15);
+    letter-spacing: 1px;
+    &:hover {
+      opacity: .8;
+    }
+    @include media($desktop) {
+      font-size: rem(30);
+    }
+  }
+}
+
+.next-article {
+  text-align: left;
+  padding: rem(30) 0;
+  color: #5c5c5c;
+  background-color: rgb(244, 244, 244);
+  &__header {
+    color: #545454;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-family: $sans-serif;
+    font-size: rem(15);
+    padding-bottom: rem(5);
+    margin-bottom: rem(30);
+    border-bottom: 1px solid #acacac;
+  }
+  &__title {
+    text-transform: uppercase;
+    font-size: rem(24);
+    @include media($desktop) {
+      font-size: rem(48);
+    }
+  }
+  &__description {
+    font-size: rem(15);
+    font-weight: 300;
+    margin-bottom: rem(20);
+    @include media($desktop) {
+      font-size: rem(30);
+    }
+  }
+  a {
+    text-decoration: underline;
+    @include media($desktop) {
+      font-size: rem(30);
+    }
+  }
+}
+
+// portfolio post specific styles
+.single-portfolio {
+  .slide {
+    &:first-of-type {
+      padding-top: 0;
+    }
+  }
+  .page-description {
+    margin-bottom: rem(80);
+  }
+  .page-thumbnail {
+    margin-bottom: 0;
+    @include media($desktop) {
+      width: auto;
+      height: auto;
+    }
+  }
+}

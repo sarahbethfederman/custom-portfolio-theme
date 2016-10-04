@@ -1,0 +1,101 @@
+// content slides
+.slide {
+  padding-top: rem(60);
+  padding-bottom: rem(80);
+  @include media($desktop) {
+    padding-top: rem(150);
+    padding-bottom: rem(190);
+  }
+  .container {
+    width: 80%;
+    max-width: rem(900);
+    margin-top: 0;
+  }
+  blockquote, blockquote p {
+    font-family: $serif;
+  }
+  ol, ul {
+    @extend %default-ul;
+    margin-top: rem(25);
+    margin-bottom: rem(20);
+    font-family: $serif;
+    font-size: rem(18);
+    @include media($desktop) {
+      font-size: rem(35);
+    }
+  }
+  h2 {
+    margin-bottom: rem(30);
+    font-size: rem(36);
+    @include media($desktop) {
+      font-size: rem(80);
+      margin-bottom: rem(45);
+    }
+  }
+  h3 {
+    font-size: rem(32);
+    @include media($desktop) {
+      font-size: rem(48);
+    }
+  }
+  p {
+    font-family: $serif;
+    margin-top: rem(25);
+    margin-bottom: rem(20);
+    font-size: rem(18);
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    @include media($desktop) {
+      font-size: rem(35);
+      line-height: rem(50);
+    }
+  }
+  em, i {
+    line-height: -1px;
+    opacity: .7;
+    font-size: rem(15);
+    @include media($desktop) {
+      font-size: rem(31);
+    }
+  }
+  &.light {
+    color: $white;
+    background-image: url('img/icons/arrow-down-light.png');
+    background-size: rem(30);
+    background-repeat: no-repeat;
+    background-position: center bottom rem(35);
+    @include media($desktop) {
+      background-size: rem(45);
+      background-position: center bottom rem(100);
+    }
+  }
+  &.dark {
+    background-image: url('img/icons/arrow-down-dark.png');
+    background-size: rem(30);
+    background-repeat: no-repeat;
+    background-position: center bottom rem(30);
+    hr {
+      border-color: $medium-gray;
+    }
+    @include media($desktop) {
+      background-size: rem(45);
+      background-position: center bottom rem(100);
+    }
+  }
+}
+
+.slide:last-of-type {
+  background-image: none; // no down arrow on last slide
+  padding-bottom: rem(70);
+  @include media($desktop) {
+    padding-bottom: rem(140);
+  }
+  blockquote, blockquote p {
+    margin-bottom: 0;
+  }
+}
+
+.page-wrap .slide.light:last-of-type, .page-wrap .slide.light:last-child {
+  background-image: none !important; // no down arrow on last slide
+}

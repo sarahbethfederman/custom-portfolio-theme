@@ -1,0 +1,111 @@
+$footerHeight: 185px;
+$desktopFooterHeight: 175px;
+
+// Footer bar
+.footer {
+    background-color: #232323;  //one off color (by request)
+    text-transform: uppercase;
+    text-align: center;
+    color: $white;
+    font-size: rem(9);
+    padding: rem(60) 0;
+    height: $footerHeight;
+    font-family: $sans-serif;
+    @include media($desktop) {
+      height: $desktopFooterHeight;
+      font-size: rem(18);
+      font-weight: bold;
+    }
+    p {
+      margin-bottom: 0;
+      @include media($desktop) {
+        float: left;
+        padding-top: rem(15);
+        text-align: left;
+      }
+    }
+    .container {
+      width: 70%;
+      @include media($desktop) {
+        padding: 0;
+        max-width: rem(1000);
+      }
+    }
+}
+
+// Social icons
+.social {
+    overflow: auto;
+    li {
+      @include span-columns(4);
+      margin-bottom: rem(30);
+      min-width: rem(28);
+      padding: 10px 0;
+      height: rem(28);
+      @include media($desktop) {
+        width: rem(45);
+        display: inline-block;
+        margin-left: rem(35);
+      }
+    }
+    a {
+      display: block;
+      height: rem(28);
+      outline: none;
+      text-indent:-9999px;
+      background-size: contain;
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      &:hover {
+        opacity: .8;
+      }
+      @include media($desktop) {
+        height: rem(38);
+      }
+    }
+
+    // to add social media icons edit here
+    &__linkedin a {
+      background-image: url('img/icons/linkedin.png');
+      background-size: auto rem(28);
+      @include media($desktop) {
+        background-size: auto rem(38);
+      }
+    }
+    &__twitter a {
+      background-image: url('img/icons/twitter.png');
+      background-size: auto rem(20);
+      @include media($desktop) {
+        background-size: auto rem(34);
+      }
+    }
+    &__email a {
+      background-image: url('img/icons/mail.png');
+      background-size: auto rem(19);
+      @include media($desktop) {
+        background-size: auto rem(30);
+      }
+    }
+    @include media($desktop) {
+      float: right;
+      min-width: 35%;
+    }
+}
+
+
+// page wrap class makes sticky footer work
+.page-wrap {
+  min-height: 100%;
+  margin-bottom: -($footerHeight);  // equal to footer
+  @include media($desktop) {
+    margin-bottom: -($desktopFooterHeight);
+  }
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+  height: $footerHeight;
+  @include media($desktop) {
+    height: $desktopFooterHeight;
+  }
+}

@@ -1,0 +1,36 @@
+.blog {
+  background-color: $white;
+  .hero {
+    width: 100%;
+    background-color: #9a1344;
+    background: linear-gradient(to bottom, #9b1545 0%,#ad325e 77%,#981141 77%,#af3661 100%);
+  }
+  .page-title {
+    color: $white;
+    padding-bottom: rem(20);
+    @include media($desktop) {
+      font-size: rem(80);
+    }
+  }
+  .page-description {
+    color: $white;
+  }
+  .page-thumbnail {
+    margin-bottom: rem(60);
+    margin-top: rem(60);
+  }
+  .page-wrap .container {
+    max-width: 80%;
+    @include media($desktop) {
+      max-width: rem(1450);
+      overflow: hidden;
+    }
+  }
+  [id='post-container'] {
+    padding-top: rem(20);
+  }
+}
+
+.blog .header-bar .container {
+  max-width: none;
+}

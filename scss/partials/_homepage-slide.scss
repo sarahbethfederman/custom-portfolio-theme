@@ -1,0 +1,119 @@
+// portfolio slide items for homepage
+.portfolio-slide {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    height: 90vh;
+    background-size: auto 60%, cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    cursor: pointer;
+    @include media($desktop) {
+      height: rem(1400);
+    }
+    &:first-of-type {  // first post (abercrombie) should be full height on mobile
+      height: 100vh;
+      .portfolio-slide__content {
+        top: 20%;
+      }
+      @include media($desktop) {
+        background-size: auto 58%, cover;
+        height: rem(1400);
+        .portfolio-slide__content {
+          top: rem(230);
+        }
+      }
+    }
+    &__title {
+      text-transform: uppercase;
+      margin-bottom: rem(10);
+      font-size: rem(24);
+      @include media($desktop) {
+        font-size: rem(48);
+        margin-bottom: rem(13);
+      }
+    }
+    &__content {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      position: absolute;
+      top: 15%;
+      z-index: 2;
+      width: 100%;
+      text-align: center;
+      padding-bottom: rem(60);
+      @include media($desktop) {
+        top: rem(145);
+      }
+    }
+    &__link {
+      padding: rem(20);
+      &:hover {
+        opacity: .7;
+      }
+    }
+    &__description {
+      font-size: rem(15);
+      margin-bottom: rem(15);
+      @include media($desktop) {
+        font-size: rem(30);
+        margin-bottom: rem(32);
+      }
+    }
+    &.left {
+      background-position: left bottom;
+      @include media($tablet) {
+        background-position: center bottom;
+      }
+    }
+    &.right {
+      background-position: right bottom;
+      @include media($tablet) {
+        background-position: center bottom;
+      }
+    }
+    &.center {
+      background-position: center bottom;
+    }
+    &.google {
+      background-position: right 130%, center;  // mobile styles
+      background-size: rem(600), cover;
+    }
+    &.xlarge {
+      @include media($tablet) {
+        background-position: center 190%, center;
+        background-size: 70rem, cover;
+      }
+      @include media($desktop) {
+        background-position: center 185%, center;
+        background-size: auto, cover;
+      }
+    }
+    &.light {
+      color: $white;
+      .arrow-right {
+        fill: $white;
+        stroke: $white;
+        max-width: 100%;
+        min-width: rem(30);
+        @include media($desktop) {
+          width: rem(45);
+        }
+      }
+    }
+    &.dark {
+      color: $medium-gray;
+      .arrow-right {
+        fill: $medium-gray;
+        max-width: 100%;
+        min-width: rem(30);
+        stroke: $medium-gray;
+        @include media($desktop) {
+          width: rem(45);
+        }
+      }
+      .portfolio-slide__description {
+        color: $medium-gray;
+      }
+    }
+}

@@ -1,0 +1,148 @@
+/*
+* Custom Owl Carousel Theme
+*	v1.3.3
+*/
+
+@import 'bourbon';
+@import 'neat';
+// Media queries
+$desktop: min-width em(1200);
+
+
+// CUSTOM STYLES
+//
+// Portfolio styles
+.portfolio-theme {
+	text-align: center;
+	.owl-controls {
+	  margin: 0;
+		text-align: center;
+		.owl-page {
+			display: inline-block;
+			zoom: 1;
+			*display: inline;
+			span {
+				display: block;
+				width: 8px;
+				height: 8px;
+				margin: 5px 5px;
+				filter: Alpha(Opacity=50);
+				opacity: 1;
+				-webkit-border-radius: 10px;
+				-moz-border-radius: 10px;
+				border-radius: 10px;
+				background: #FFF;
+				@include media($desktop) {
+					width: 14px;
+					height: 14px;
+					margin: 8px 8px;
+				}
+			}
+			&.active, &.hover {
+				span {
+					background: transparent;
+					border: 2px solid #FFF;
+					@include media($desktop) {
+						border: 3px solid #FFF;
+					}
+				}
+			}
+		}
+	}
+	a {
+		color: #FFF;
+		&:hover {
+			color: #FFF;
+			opacity: .8;
+		}
+	}
+	.text-items {
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  z-index: 10;
+	}
+
+	.item-title {
+	  text-transform: uppercase;
+	  font-size: rem(18);
+		margin-bottom: rem(5);
+		@include media($desktop) {
+			font-size: rem(35);
+			margin-bottom: rem(10);
+		}
+	}
+
+	.item-description {
+	  font-size: rem(12);
+		@include media($desktop) {
+			font-size: rem(22);
+		}
+	}
+
+	.owl-wrapper-outer, .owl-wrapper, .owl-item {
+	  height: rem(300);
+	  position: relative;
+		@include media($desktop) {
+			height: rem(490);
+		}
+	}
+
+	.arrow-right {
+		width: rem(25);
+		@include media($desktop) {
+			width: rem(45);
+		}
+	}
+
+	.owl-item {
+		font-family: "BentonSans", sans-serif;
+		&.loading {
+			min-height: 150px;
+			background: url(AjaxLoader.gif) no-repeat center center
+		}
+		.owl-item-wrapper {
+			height: rem(300);
+	  	padding: rem(50) 0;
+			padding-top: rem(30);
+			@include media($desktop) {
+				height: rem(490);
+			}
+		}
+		img:not(.arrow-right) {
+	  	height: 100%;
+	  	opacity: .4;
+		}
+	}
+	.owl-pagination {
+	  position: absolute;
+	  bottom: rem(10);
+	  left: 50%;
+	  transform: translateX(-50%);
+	}
+	.owl-controls.clickable .owl-buttons div:hover{
+		filter: Alpha(Opacity=100);
+		opacity: 1;
+		text-decoration: none;
+	}
+}
+
+.content-carousel {
+	.owl-controls {
+		.owl-pagination {
+			display: flex;
+		}
+		.owl-page {
+			width: 100%;
+			span {
+				height: 3px;
+				border-radius: 0;
+				width: calc(100% - 6px);
+				opacity: .3;
+				margin-left: 3px;
+				margin-right: 3px;
+			}
+		}
+	}
+}

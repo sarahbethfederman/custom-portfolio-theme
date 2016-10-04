@@ -1,0 +1,103 @@
+// Basic archive type page styles
+// This includes search results, 404, tag pages, etc.
+
+.search-results, .search, .error404, .archive {
+  background-image: linear-gradient(to bottom, #0a6c7b 0%,#12a9bf 100%);
+  background-repeat: no-repeat;
+  @include clearfix();
+  .container {
+    @include media($desktop) {
+      max-width: rem(1120);
+    }
+  }
+  hr {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    opacity: .5;
+    width: 80%;
+    max-width: rem(700);
+    @include media($desktop) {
+      border-width: 2px;
+      width: 100%;
+      max-width: rem(1000);
+    }
+  }
+  .page-title {
+    color: $white;
+    margin-bottom: rem(20);
+    @include media($desktop) {
+      font-size: rem(80);
+      margin-top: rem(80);
+    }
+  }
+  .page-description {
+    color: $white;
+    @include media($desktop) {
+      font-size: rem(35);
+      line-height: 1.3;
+      margin-bottom: rem(95);
+    }
+  }
+  a {
+    color: $white;
+    &:hover {
+      opacity: .8;
+    }
+  }
+}
+
+
+.list {
+  color: rgba($white, .7);
+  margin-bottom: rem(45);
+  text-align: center;
+  @include media($desktop) {
+    margin-bottom: rem(85);
+  }
+  &:first-of-type {
+    margin-top: rem(30);
+    @include media($desktop) {
+      margin-top: rem(65);
+    }
+  }
+  &__title {
+    text-transform: uppercase;
+    font-size: rem(24);
+    margin-bottom: rem(10);
+    padding: 0 rem(20);
+    @include media($desktop) {
+      font-size: rem(48);
+      margin-bottom: rem(25);
+    }
+  }
+  &__info {
+    @include clearfix();
+    font-size: rem(15);
+    width: 40%;
+    max-width: rem(180);
+    margin-left: auto;
+    margin-right: auto;
+    &__right {
+      float: right;
+    }
+    &__left {
+      float: left;
+    }
+    @include media($desktop) {
+      font-size: rem(30);
+      width: 60%;
+      max-width: rem(350);
+    }
+  }
+}
+
+.no-results {
+  text-align: center;
+  color: $white;
+  margin-top: rem(30);
+  @include media($desktop) {
+    font-size: rem(24);
+    margin-bottom: rem(60);
+  }
+}

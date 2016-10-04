@@ -1,0 +1,130 @@
+.card {
+    @include span-columns(12);
+    margin-top: rem(40);
+    background-color: $light-gray;
+    position: relative;
+    &:last-of-type {
+      margin-bottom: rem(60);
+    }
+    @include media($tablet) {
+      width: 47.5%;
+      margin-right: 0;
+      margin-bottom: rem(60);
+      &:nth-child(2n+2) {
+        float: right;
+      }
+      &:nth-last-child(1) {
+        float: left;
+      }
+    }
+    @include media($desktop) {  // tablet
+      max-width: rem(622);
+    }
+    .wp-post-image {
+      width: 100%;
+      height: auto;
+    }
+    &__image {
+      height: rem(250);
+      overflow: hidden;
+      @include media($desktop) {
+        height: rem(480);
+      }
+    }
+    &__content {
+      @extend .shadowed;
+      padding: rem(20);
+      text-overflow: hidden;
+      font-size: rem(15);
+      height: rem(160);
+      @include media($desktop) {
+        font-size: rem(30);
+        height: rem(315);
+        line-height: 1.4;
+        padding: rem(30);
+      }
+    }
+    .post-title {
+      text-transform: uppercase;
+      font-size: rem(24);
+      margin-bottom: rem(10);
+      a {
+        color: $dark-gray;
+        &:hover {
+          opacity: .8;
+        }
+      }
+      @include media($desktop) {
+        font-size: rem(48);
+      }
+    }
+    &__flag {
+      position: absolute;
+      left: rem(20);
+      top: rem(-10);
+      background-color: $white;
+      width: rem(34);
+      height: rem(40);
+      box-shadow: 0 8px 16px 0px rgba(0, 0, 0, 0.15);
+      text-transform: uppercase;
+      text-align: center;
+      font-family: $header-font-family;
+      line-height: 1;
+      padding-top: 2px;
+      @include media($desktop) {
+        width: rem(70);
+        height: rem(80);
+        padding-top: rem(15);
+        left: rem(30);
+      }
+      .date {
+        color: #df2467;
+        font-size: rem(18);
+        font-family: $header-font-family;
+        @include media($desktop) {
+          font-size: rem(36);
+        }
+      }
+      .month {
+        font-size: rem(9);
+        color: #a1a1a1;
+        font-weight: 700;
+        @include media($desktop) {
+          font-size: rem(18);
+        }
+      }
+      hr {
+        color: $gray;
+        margin: 0 auto;
+        margin-bottom: 2px;
+        width: 70%;
+        text-align: center;
+      }
+      &:before {
+        content: '';
+        z-index: -1;
+        width: 90%;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 5%;
+        box-shadow: 0 0px 10px 0px rgba(0, 0, 0, 0.2);
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 11px 17px 0 17px;
+        border-color: $white transparent transparent transparent;
+
+        @include media($desktop) {
+          border-width: 20px 35px 0 35px;
+          bottom: -20px;
+        }
+      }
+    }
+}
